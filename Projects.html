@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="Mohammad Hossein Nouri" />
+<meta name="theme-color" content="#213555" />
+<title>پروژه‌ها — EnderDev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<canvas id="projects-bg" aria-hidden="true"></canvas>
+<div class="bg-glow"></div>
+
+<button class="rail-fab" aria-label="menu">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+  <span class="t" data-fa="منو" data-en="Menu">منو</span>
+</button>
+<div class="scrim"></div>
+
+<div class="layout">
+
+  <!-- ===== SIDE RAIL : right for FA, left for EN ===== -->
+  <aside class="rail">
+    <a class="rail-brand" href="Home.html">
+      <img class="mark" src="assets/portrait.png" alt="محمدحسین نوری" />
+      <span>
+        <b class="t" data-fa="محمدحسین نوری" data-en="M. Hossein Nouri">محمدحسین نوری</b>
+        <small>EnderDev</small>
+      </span>
+    </a>
+
+    <div class="rail-divider"></div>
+
+    <nav class="rail-nav" aria-label="primary">
+      <a href="Home.html">
+        <span class="t" data-fa="خانه" data-en="Home">خانه</span>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="Projects.html" class="active">
+        <span class="t" data-fa="پروژه‌ها" data-en="Projects">پروژه‌ها</span>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="Contact.html">
+        <span class="t" data-fa="تماس با من" data-en="Contact me">تماس با من</span>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="https://github.com/EnderM4n-Dev" target="_blank" rel="noopener" class="ext">
+        <span class="t" data-fa="گیت‌هاب من" data-en="My GitHub">گیت‌هاب من</span>
+      </a>
+    </nav>
+
+    <div class="rail-grow"></div>
+
+    <div class="rail-divider"></div>
+    <span class="rail-eyebrow t" data-fa="تماس سریع" data-en="Quick contact">تماس سریع</span>
+    <div class="rail-logos">
+      <a href="https://t.me/EnderM4n" target="_blank" rel="noopener" title="Telegram"><img src="assets/telegram.png" alt="Telegram" /></a>
+      <a href="https://ble.ir/EnderM4n" target="_blank" rel="noopener" title="Bale"><img src="assets/bale.png" alt="Bale" /></a>
+    </div>
+
+    <div class="rail-foot">
+      <small>© EnderDev</small>
+      <span class="lang-toggle">
+        <button data-lang="fa" class="on">FA</button>
+        <button data-lang="en">EN</button>
+      </span>
+    </div>
+  </aside>
+
+  <!-- ===== CONTENT ===== -->
+  <main data-screen-label="Projects">
+    <div class="content">
+      <section class="page">
+        <div class="section-head reveal">
+          <span class="eyebrow t" data-fa="پروژه‌ها" data-en="Projects">پروژه‌ها</span>
+          <h2 class="h-section">
+            <span class="t" data-fa="چند نمونه از" data-en="A few things">چند نمونه از</span>
+            <span class="hl t" data-fa="کارهام" data-en="I've built">کارهام</span>
+          </h2>
+        </div>
+
+        <div class="proj-grid">
+          <!-- card 1 : گلخانه هوشمند -->
+          <article class="card reveal d1">
+            <div class="shot"><img src="assets/greenhouse.png" alt="Smart Greenhouse" style="width:100%;height:100%;object-fit:cover;" /></div>
+            <div class="card-body">
+              <h3 class="t" data-fa="گلخانه هوشمند" data-en="Smart Greenhouse">گلخانه هوشمند</h3>
+              <p class="desc t" data-fa="سیستم مانیتورینگ و کنترل هوشمند گلخانه." data-en="Smart greenhouse monitoring and control system.">سیستم مانیتورینگ و کنترل هوشمند گلخانه.</p>
+              <p class="skills-label t" data-fa="مهارت‌های استفاده‌شده:" data-en="Skills used:">مهارت‌های استفاده‌شده:</p>
+              <div class="skills">
+                <span class="skill">IoT</span>
+                <span class="skill t" data-fa="برنامه‌نویسی میکروکنترلر" data-en="Microcontroller Programming">برنامه‌نویسی میکروکنترلر</span>
+                <span class="skill t" data-fa="الکترونیک" data-en="Electronics">الکترونیک</span>
+              </div>
+              <div class="card-foot">
+                <a class="gh-link" href="https://github.com/EnderM4n-Dev" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 015 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+                  <span class="t" data-fa="لینک گیت‌هاب" data-en="GitHub link">لینک گیت‌هاب</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- card 2 -->
+          <article class="card reveal d2">
+            <image-slot id="proj-2" radius="0" placeholder="اسکرین‌ پروژه — بکش و رها کن"></image-slot>
+            <div class="card-body">
+              <h3 class="t" data-fa="پروژه‌ی دوم" data-en="Project Two">پروژه‌ی دوم</h3>
+              <p class="desc t" data-fa="توضیح کوتاه — بعداً جایگزین می‌شه." data-en="Short description — placeholder.">توضیح کوتاه — بعداً جایگزین می‌شه.</p>
+              <p class="skills-label t" data-fa="مهارت‌های استفاده‌شده:" data-en="Skills used:">مهارت‌های استفاده‌شده:</p>
+              <div class="skills">
+                <span class="skill ph t" data-fa="مهارت ۱" data-en="Skill 1">مهارت ۱</span>
+                <span class="skill ph t" data-fa="مهارت ۲" data-en="Skill 2">مهارت ۲</span>
+              </div>
+              <div class="card-foot">
+                <a class="gh-link" href="https://github.com/EnderM4n-Dev" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 015 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+                  <span class="t" data-fa="لینک گیت‌هاب" data-en="GitHub link">لینک گیت‌هاب</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- card 3 -->
+          <article class="card reveal d1">
+            <image-slot id="proj-3" radius="0" placeholder="اسکرین‌ پروژه — بکش و رها کن"></image-slot>
+            <div class="card-body">
+              <h3 class="t" data-fa="پروژه‌ی سوم" data-en="Project Three">پروژه‌ی سوم</h3>
+              <p class="desc t" data-fa="توضیح کوتاه — بعداً جایگزین می‌شه." data-en="Short description — placeholder.">توضیح کوتاه — بعداً جایگزین می‌شه.</p>
+              <p class="skills-label t" data-fa="مهارت‌های استفاده‌شده:" data-en="Skills used:">مهارت‌های استفاده‌شده:</p>
+              <div class="skills">
+                <span class="skill ph t" data-fa="مهارت ۱" data-en="Skill 1">مهارت ۱</span>
+                <span class="skill ph t" data-fa="مهارت ۲" data-en="Skill 2">مهارت ۲</span>
+              </div>
+              <div class="card-foot">
+                <a class="gh-link" href="https://github.com/EnderM4n-Dev" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 015 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+                  <span class="t" data-fa="لینک گیت‌هاب" data-en="GitHub link">لینک گیت‌هاب</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- card 4 -->
+          <article class="card reveal d2">
+            <image-slot id="proj-4" radius="0" placeholder="اسکرین‌ پروژه — بکش و رها کن"></image-slot>
+            <div class="card-body">
+              <h3 class="t" data-fa="پروژه‌ی چهارم" data-en="Project Four">پروژه‌ی چهارم</h3>
+              <p class="desc t" data-fa="توضیح کوتاه — بعداً جایگزین می‌شه." data-en="Short description — placeholder.">توضیح کوتاه — بعداً جایگزین می‌شه.</p>
+              <p class="skills-label t" data-fa="مهارت‌های استفاده‌شده:" data-en="Skills used:">مهارت‌های استفاده‌شده:</p>
+              <div class="skills">
+                <span class="skill ph t" data-fa="مهارت ۱" data-en="Skill 1">مهارت ۱</span>
+                <span class="skill ph t" data-fa="مهارت ۲" data-en="Skill 2">مهارت ۲</span>
+              </div>
+              <div class="card-foot">
+                <a class="gh-link" href="https://github.com/EnderM4n-Dev" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 015 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+                  <span class="t" data-fa="لینک گیت‌هاب" data-en="GitHub link">لینک گیت‌هاب</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- card 5 -->
+          <article class="card reveal d3">
+            <image-slot id="proj-5" radius="0" placeholder="اسکرین‌ پروژه — بکش و رها کن"></image-slot>
+            <div class="card-body">
+              <h3 class="t" data-fa="پروژه‌ی پنجم" data-en="Project Five">پروژه‌ی پنجم</h3>
+              <p class="desc t" data-fa="توضیح کوتاه — بعداً جایگزین می‌شه." data-en="Short description — placeholder.">توضیح کوتاه — بعداً جایگزین می‌شه.</p>
+              <p class="skills-label t" data-fa="مهارت‌های استفاده‌شده:" data-en="Skills used:">مهارت‌های استفاده‌شده:</p>
+              <div class="skills">
+                <span class="skill ph t" data-fa="مهارت ۱" data-en="Skill 1">مهارت ۱</span>
+                <span class="skill ph t" data-fa="مهارت ۲" data-en="Skill 2">مهارت ۲</span>
+              </div>
+              <div class="card-foot">
+                <a class="gh-link" href="https://github.com/EnderM4n-Dev" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 015 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+                  <span class="t" data-fa="لینک گیت‌هاب" data-en="GitHub link">لینک گیت‌هاب</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<!-- ===== bottom nav (mobile only) ===== -->
+<nav class="bottom-nav" aria-label="mobile navigation">
+  <a href="Home.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12L12 4l9 8v8a1 1 0 01-1 1h-5v-5H9v5H4a1 1 0 01-1-1z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="bn-label t" data-fa="خانه" data-en="Home">خانه</span>
+  </a>
+  <a href="Projects.html" class="active">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    <span class="bn-label t" data-fa="پروژه‌ها" data-en="Projects">پروژه‌ها</span>
+  </a>
+  <a href="Contact.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-8.5 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 1121 11.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="bn-label t" data-fa="تماس" data-en="Contact">تماس</span>
+  </a>
+  <a href="https://github.com/EnderM4n-Dev" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 015 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+    <span class="bn-label">GitHub</span>
+  </a>
+  <button class="bn-lang" onclick="(function(){var l=document.documentElement.lang==='fa'?'en':'fa';document.querySelectorAll('.lang-toggle button[data-lang='+l+']').forEach(function(b){b.click();});})()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" stroke-linecap="round"/></svg>
+    <span class="t" data-fa="EN" data-en="FA">EN</span>
+  </button>
+</nav>
+
+<script src="image-slot.js"></script>
+<script src="app.js"></script>
+<script src="projects-bg.js"></script>
+</body>
+</html>
