@@ -135,7 +135,8 @@ html[lang="fa"] .chan:hover { transform: translateX(-5px); }
 .chan.tg .ic { background: rgba(79,112,156,.25); color: var(--blue-bright); }
 .chan.ble .ic { background: rgba(229,210,131,.18); color: var(--gold); }
 .chan .m b { display: block; font-weight: 700; font-size: 14.5px; line-height: 1.3; }
-.chan .m span { color: var(--muted); font-size: 12px; font-family: 'Space Grotesk', monospace; }
+.chan .m span { color: var(--muted); font-size: 12px; font-family: 'Space Grotesk', monospace; direction: ltr; unicode-bidi: plaintext; display: block; }
+html[dir="rtl"] .chan .m span { text-align: right; }
 
 .rail-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .rail-foot small { color: var(--muted); font-size: 11.5px; font-family: 'Space Grotesk', monospace; }
@@ -247,7 +248,7 @@ html[lang="fa"] .show-item figcaption .go svg { transform: scaleX(-1); }
 
 /* ---- PROJECTS page ---- */
 .page { padding-block: clamp(70px, 11vh, 120px) clamp(70px, 10vw, 120px); min-height: 100vh; }
-.proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 24px; }
+.proj-grid { display: grid; grid-template-columns: 1fr; gap: 32px; max-width: 980px; margin: 0 auto; }
 .card {
   border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
   background: rgba(26,42,69,.55); backdrop-filter: blur(8px);
@@ -255,6 +256,92 @@ html[lang="fa"] .show-item figcaption .go svg { transform: scaleX(-1); }
 }
 .card:hover { transform: translateY(-8px); border-color: rgba(113,148,196,.6); box-shadow: 0 30px 60px -28px rgba(0,0,0,.6); }
 .card image-slot { display: block; width: 100%; aspect-ratio: 16 / 9; background: linear-gradient(160deg, var(--navy-soft), var(--navy-deep)); border-bottom: 1px solid var(--line); }
+
+/* ===== project gallery (single-column cards) ===== */
+.gallery { display: grid; grid-template-columns: 1fr 96px; gap: 14px; padding: 14px; background: rgba(20,30,50,.45); border-bottom: 1px solid var(--line); }
+.gal-main {
+  position: relative; border-radius: 12px; overflow: hidden;
+  aspect-ratio: 16 / 9; background: var(--navy-deep);
+}
+.gal-main img {
+  width: 100%; height: 100%; object-fit: cover; cursor: zoom-in;
+  transition: opacity .25s var(--ease);
+}
+.gal-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 38px; height: 38px; border-radius: 50%; border: 0;
+  background: rgba(33,53,85,.85); backdrop-filter: blur(8px);
+  color: var(--light); cursor: pointer; display: grid; place-items: center;
+  opacity: 0; transition: opacity .25s, background .25s;
+}
+.gal-main:hover .gal-nav { opacity: 1; }
+.gal-nav:hover { background: var(--gold); color: var(--navy); }
+.gal-nav svg { width: 20px; height: 20px; }
+.gal-nav.prev { left: 10px; }
+.gal-nav.next { right: 10px; }
+html[dir="rtl"] .gal-nav.prev svg, html[dir="rtl"] .gal-nav.next svg { transform: scaleX(-1); }
+.gal-zoom-hint {
+  position: absolute; top: 10px; inset-inline-end: 10px;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(33,53,85,.85); color: var(--gold);
+  display: grid; place-items: center; cursor: pointer;
+  opacity: 0; transition: opacity .25s, background .25s;
+}
+.gal-main:hover .gal-zoom-hint { opacity: 1; }
+.gal-zoom-hint:hover { background: var(--gold); color: var(--navy); }
+.gal-zoom-hint svg { width: 18px; height: 18px; }
+.gal-thumbs { display: flex; flex-direction: column; gap: 8px; max-height: 100%; overflow-y: auto; }
+.gal-thumbs::-webkit-scrollbar { width: 4px; }
+.gal-thumbs::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+.thumb {
+  width: 96px; height: 60px; border-radius: 8px; overflow: hidden;
+  border: 2px solid transparent; background: var(--navy-deep); padding: 0; cursor: pointer; flex: none;
+  transition: border-color .25s, transform .25s;
+}
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumb:hover { transform: translateY(-2px); }
+.thumb.active { border-color: var(--gold); }
+
+/* ===== lightbox (zoom overlay) ===== */
+.lightbox {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(8,14,26,.96); backdrop-filter: blur(12px);
+  display: grid; place-items: center;
+  opacity: 0; pointer-events: none; transition: opacity .3s var(--ease);
+}
+.lightbox.open { opacity: 1; pointer-events: auto; }
+.lb-img {
+  max-width: 90vw; max-height: 88vh; border-radius: 12px;
+  user-select: none; touch-action: none; will-change: transform;
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,.6);
+}
+.lb-close, .lb-nav {
+  position: absolute; width: 48px; height: 48px; border-radius: 50%; border: 0;
+  background: rgba(240,240,241,.1); backdrop-filter: blur(10px); color: var(--light);
+  cursor: pointer; display: grid; place-items: center;
+  transition: background .25s, transform .25s;
+}
+.lb-close:hover, .lb-nav:hover { background: var(--gold); color: var(--navy); transform: scale(1.05); }
+.lb-close { top: 20px; inset-inline-end: 20px; }
+.lb-nav svg, .lb-close svg { width: 22px; height: 22px; }
+.lb-prev { left: 24px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 24px; top: 50%; transform: translateY(-50%); }
+.lb-prev:hover, .lb-next:hover { transform: translateY(-50%) scale(1.05); }
+html[dir="rtl"] .lb-prev svg, html[dir="rtl"] .lb-next svg { transform: scaleX(-1); }
+.lb-counter {
+  position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+  font-family: 'Space Grotesk', monospace; font-size: 13px;
+  color: var(--muted); background: rgba(240,240,241,.08);
+  padding: 6px 14px; border-radius: 100px; backdrop-filter: blur(8px);
+}
+
+@media (max-width: 700px) {
+  .gallery { grid-template-columns: 1fr; }
+  .gal-thumbs { flex-direction: row; max-height: none; overflow-x: auto; overflow-y: hidden; }
+  .thumb { width: 80px; height: 50px; }
+  .lb-close { top: 12px; inset-inline-end: 12px; }
+  .lb-prev { left: 8px; } .lb-next { right: 8px; }
+}
 .card-body { padding: 24px; }
 .card-body h3 { font-size: 22px; font-weight: 700; }
 .card-body .desc { color: var(--muted); font-size: 15px; margin-top: 8px; }
